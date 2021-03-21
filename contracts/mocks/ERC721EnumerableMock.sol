@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "../token/ERC721/ERC721Enumerable.sol";
+import "../token/ERC721/extensions/ERC721Enumerable.sol";
 
 /**
  * @title ERC721Mock
@@ -23,6 +23,10 @@ contract ERC721EnumerableMock is ERC721Enumerable {
 
     function baseURI() public view returns (string memory) {
         return _baseURI();
+    }
+
+    function exists(uint256 tokenId) public view returns (bool) {
+        return _exists(tokenId);
     }
 
     function mint(address to, uint256 tokenId) public {
